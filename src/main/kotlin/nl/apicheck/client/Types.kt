@@ -49,7 +49,7 @@ data class PhoneVerificationResponse(
     val carrier: String? = null
 )
 
-class ApiCheckException(message: String, val statusCode: Int? = null) : Exception(message)
+open class ApiCheckException(message: String, val statusCode: Int? = null) : Exception(message)
 class UnsupportedCountryException(message: String, val country: String) : ApiCheckException(message, 400)
 class AuthenticationException : ApiCheckException("Invalid API key", 401)
 class RateLimitException(val retryAfter: Int?) : ApiCheckException("Rate limit exceeded", 429)
