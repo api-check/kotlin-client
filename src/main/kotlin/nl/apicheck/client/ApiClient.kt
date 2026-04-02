@@ -198,5 +198,3 @@ class ApiClient(
         }
     }
 }
-
-class ApiCheckException(message: String) : Exception(message)
