@@ -10,8 +10,6 @@ data class Address(
     val city: String,
     val municipality: String? = null,
     val province: String? = null,
-    val latitude: Double? = null,
-    val longitude: Double? = null,
     val countryCode: String? = null
 )
 
@@ -46,7 +44,7 @@ data class PhoneVerification(
 
 // Exception classes
 open class ApiCheckException(message: String, val statusCode: Int? = null) : Exception(message) {
-    constructor(message: String) : this(message, null)
+    constructor(message: String, val statusCode: Int?) : super(message, statusCode)
 }
 
 class UnsupportedCountryException(message: String, val country: String) : ApiCheckException(message, 400)
