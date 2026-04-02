@@ -1,5 +1,7 @@
 package nl.apicheck.client
 
+data class Country(val name: String, val code: String)
+
 data class Address(
     val street: String,
     val number: String,
